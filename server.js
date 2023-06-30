@@ -17,12 +17,16 @@ app.use('/', playerRoutes)
 
 mongoose.connect(
   connectionString
-);
+).then(() => {
+  app.listen(PORT, function () {
+    console.log("listening on 3000");
+  });  
+})
 const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to Database"));
 
 
-app.listen(PORT, function () {
-  console.log("listening on 3000");
-});
+// app.listen(PORT, function () {
+//   console.log("listening on 3000");
+// });
