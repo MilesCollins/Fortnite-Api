@@ -1,0 +1,11 @@
+POST http://localhost:3000/player
+Content-Type: application/json
+
+{
+    "name": "Palmer",
+    "server": "NAE",
+    "earnings": "1900"
+}
+###
+GET http://localhost:3000/
+Content-Type: application/json
